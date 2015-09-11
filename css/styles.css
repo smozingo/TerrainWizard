@@ -1,0 +1,271 @@
+body {
+    margin-top: 51px;
+    background-color: black;
+    background-image: url('../img/worldmap1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(16, 16, 16);
+}
+
+#logo {
+    height: 35px;
+    margin-top: -6px;
+}
+
+#welcomeBox {
+    position: relative;
+    padding: 20px 0 0 20px;
+    color: rgb(255, 230, 192);
+    border: 2px solid black;
+    background-image: url('../img/battlefield.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#topContainer img {
+    margin: 40px auto;
+    width: 95%;
+}
+
+#welcomeRow {
+    margin: 50px 0 65px 0;
+    width: 95%;
+}
+
+#welcomeText {
+    padding: 0 10px 10px 10px;
+    background-color: rgba(43, 40, 40, 0.65);
+    border: 1px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.contentDiv {
+    background-color: #5e2f18;
+    background-image: url(../img/parchmentlightbg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    margin: 10px auto 10px auto;
+    padding: 0 20px 0 20px;
+}
+
+.contentDiv p {
+    text-align: justify;
+}
+
+.marginTop {
+    margin-top:30px;
+}
+
+.marginBottom {
+    margin-bottom:80px;
+}
+
+.wButton {
+    border: 1px solid black;
+    background-image: url(../img/parchmentlightbtn.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wButton:hover {
+    background-image: url(../img/parchmentlightbtnh.jpg);
+    cursor: pointer;
+    color: darkred;
+}
+
+.collapseButton {
+    text-align:center;
+    width: 100%;
+}
+
+.collapseButton:hover {
+    cursor: pointer;
+}
+
+#featuresHeader h1 {
+    text-align: center;
+    margin-top:80px;
+}
+
+#wizardBox {
+    margin: 10px auto;
+    max-width: 900px;
+}
+
+#optionsBox {
+    border: 1px solid #101010;
+    position: relative;
+
+    padding: 5px;
+    height: 200px;
+}
+
+#wizardTable {
+    table-layout: fixed;
+    margin-top: 10px;
+}
+
+#wizardTable img {
+    padding-top: 50px;
+    width: 99%;
+}
+
+.wCell {
+    margin: 0 auto;
+    width: 10%;
+    height: 120px;
+    background-color: #57AB38;
+    background-size: cover;
+    border: 1px solid darkslategrey !important;
+}
+
+#structure {
+    position: relative;
+    top:-23px;
+    left:26px;
+    width: 42% !important;
+}
+
+.terrainTile {
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg) translateY(-100%);
+    -moz-transform: rotate(90deg) translateY(-100%);
+    -ms-transform: rotate(90deg) translateY(-100%);
+    -o-transform: rotate(90deg) translateY(-100%);
+    transform: rotate(90deg) translateY(-100%);
+}
+
+
+.rotate180 {
+    -webkit-transform: rotate(180deg) translate(-100%, -100%);
+    -moz-transform: rotate(180deg) translate(-100%, -100%);
+    -ms-transform: rotate(180deg) translate(-100%, -100%);
+    -o-transform: rotate(180deg) translate(-100%, -100%);
+    transform: rotate(180deg) translate(-100%, -100%);
+}
+
+
+.rotate270 {
+    -webkit-transform: rotate(270deg) translateX(-100%);
+    -moz-transform: rotate(270deg) translateX(-100%);
+    -ms-transform: rotate(270deg) translateX(-100%);
+    -o-transform: rotate(270deg) translateX(-100%);
+    transform: rotate(270deg) translateX(-100%);
+}
+
+.cover90 {
+    position: relative;
+/*    top: 19px;
+    left: -40px;*/
+}
+
+.cover180 {
+    position: relative;
+  /*  left: -94px;
+    top: -20px;*/
+}
+
+.cover270 {
+    position: relative;
+    top: -76px;
+    left: -27px;
+}
+
+/*Space*/
+.spaceCell1 {
+    background-image: url('../img/space1.jpg');
+}
+
+.spaceCell2 {
+    background-image: url('../img/space2.jpg');
+}
+
+.spaceCell3 {
+    background-image: url('../img/space3.jpg');
+}
+
+.spaceCell4 {
+    background-image: url('../img/space4.jpg');
+}
+
+/*Grass*/
+.grassCell1 {
+    background-image: url('../img/grass1.jpg');
+}
+
+.grassCell2 {
+    background-image: url('../img/grass2.jpg');
+}
+
+.grassCell3 {
+    background-image: url('../img/grass3.jpg');
+}
+
+.grassCell4 {
+    background-image: url('../img/grass4.jpg');
+}
+
+/*Swamp*/
+.swampCell1 {
+    background-image: url('../img/swamp1.jpg');
+}
+
+.swampCell2 {
+    background-image: url('../img/swamp2.jpg');
+}
+
+.swampCell3 {
+    background-image: url('../img/swamp3.jpg');
+}
+
+.swampCell4 {
+    background-image: url('../img/swamp4.jpg');
+}
+
+/*Forest*/
+.forestCell1 {
+    background-image: url('../img/forest1.jpg');
+}
+
+.forestCell2 {
+    background-image: url('../img/forest2.jpg');
+}
+
+.forestCell3 {
+    background-image: url('../img/forest3.jpg');
+}
+
+.forestCell4 {
+    background-image: url('../img/forest4.jpg');
+}
+
+/*street*/
+.streetCell1 {
+    background-image: url('../img/street1.jpg');
+}
+
+.streetCell2 {
+    background-image: url('../img/street1.jpg');
+}
+
+.streetCell3 {
+    background-image: url('../img/street1.jpg');
+}
+
+.streetCell4 {
+    background-image: url('../img/street1.jpg');
+}
