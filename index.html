@@ -176,89 +176,96 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="form-group-sm">
+                                <button class="btn wButton" type="button" id="deploymentButton">Swap Deployment Zones</button>
+                            </div>
                         </form>
                     </div>
+
                     <table id="wizardTable" class="table table-responsive">
+                        <div id="deploymentLeft" class="deploymentFirst"></div>
+                        <div id="deploymentRight" class="deploymentSecond"></div>
                         <tr>
-                            <td id="w11"></td>
-                            <td id="w12"></td>
-                            <td id="w13"></td>
-                            <td id="w14"><img id="cover" class="terrainTile" src="img/cover1.png" /></td>
-                            <td id="w15"></td>
-                            <td id="w16"></td>
-                            <td id="w17"></td>
-                            <td id="w18"></td>
+                            <td id="c11"></td>
+                            <td id="c12"></td>
+                            <td id="c13"></td>
+                            <td id="c14"><canvas id="c14water1"></canvas>Water</td>
+                            <td id="c15"></td>
+                            <td id="c16"></td>
+                            <td id="c17"><canvas id="c17cover1"></canvas>Cover</td>
+                            <td id="c18"></td>
                         </tr>
                         <tr>
-                            <td id="w21"></td>
-                            <td id="w22"></td>
-                            <td id="w23"></td>
-                            <td id="w24"></td>
-                            <td id="w25"></td>
-                            <td id="w26"></td>
-                            <td id="w27"></td>
-                            <td id="w28"></td>
+                            <td id="c21"></td>
+                            <td id="c22"><canvas id="c22rough1"></canvas>Rough</td>
+                            <td id="c23"></td>
+                            <td id="c24"></td>
+                            <td id="c25"><canvas id="c25hill1"></canvas>Hill</td>
+                            <td id="c26"></td>
+                            <td id="c27"></td>
+                            <td id="c28"></td>
                         </tr>
                         <tr>
-                            <td id="w31"></td>
-                            <td id="w32"></td>
-                            <td id="w33"></td>
-                            <td id="w34"></td>
-                            <td id="w35"></td>
-                            <td id="w36"></td>
-                            <td id="w37"></td>
-                            <td id="w38"></td>
+                            <td id="c31"><canvas id="c31forest1"></canvas>Forest</td>
+                            <td id="c32"></td>
+                            <td id="c33"></td>
+                            <td id="c34"></td>
+                            <td id="c35"></td>
+                            <td id="c36"></td>
+                            <td id="c37"></td>
+                            <td id="c38"></td>
                         </tr>
                         <tr>
-                            <td id="w41"></td>
-                            <td id="w42"></td>
-                            <td id="w43"></td>
-                            <td id="w44"></td>
-                            <td id="w45"></td>
-                            <td id="w46"></td>
-                            <td id="w47"></td>
-                            <td id="w48"></td>
+                            <td id="c41"></td>
+                            <td id="c42"></td>
+                            <td id="c43"></td>
+                            <td id="c44"></td>
+                            <td id="c45"></td>
+                            <td id="c46"></td>
+                            <td id="c47"></td>
+                            <td id="c48"></td>
                         </tr>
                         <tr>
-                            <td id="w51"></td>
-                            <td id="w52"></td>
-                            <td id="w53"></td>
-                            <td id="w54"></td>
-                            <td id="w55"></td>
-                            <td id="w56"></td>
-                            <td id="w57"></td>
-                            <td id="w58"></td>
+                            <td id="c51"></td>
+                            <td id="c52"></td>
+                            <td id="c53"></td>
+                            <td id="c54"></td>
+                            <td id="c55"></td>
+                            <td id="c56"></td>
+                            <td id="c57"></td>
+                            <td id="c58"></td>
                         </tr>
                         <tr>
-                            <td id="w61"><img id="structure" class="terrainTile structure1" src="img/structure1.png" /></td>
-                            <td id="w62"></td>
-                            <td id="w63"></td>
-                            <td id="w64"></td>
-                            <td id="w65"></td>
-                            <td id="w66"></td>
-                            <td id="w67"></td>
-                            <td id="w68"></td>
+                            <td id="c61"><canvas id="c61trench1"></canvas>Trench</td>
+                            <td id="c62"></td>
+                            <td id="c63"></td>
+                            <td id="c64"></td>
+                            <td id="c65"></td>
+                            <td id="c66"></td>
+                            <td id="c67"></td>
+                            <td id="c68"></td>
                         </tr>
                         <tr>
-                            <td id="w71"></td>
-                            <td id="w72"></td>
-                            <td id="w73"></td>
-                            <td id="w74"></td>
-                            <td id="w75"></td>
-                            <td id="w76"></td>
-                            <td id="w77"></td>
-                            <td id="w78"></td>
+                            <td id="c71"></td>
+                            <td id="c72"></td>
+                            <td id="c73"></td>
+                            <td id="c74"></td>
+                            <td id="c75"><canvas id="c75structure1"></canvas>Structure</td>
+                            <td id="c76"></td>
+                            <td id="c77"></td>
+                            <td id="c78"></td>
                         </tr>
                         <tr>
-                            <td id="w81"></td>
-                            <td id="w82"></td>
-                            <td id="w83"></td>
-                            <td id="w84"></td>
-                            <td id="w85"></td>
-                            <td id="w86"></td>
-                            <td id="w87"></td>
-                            <td id="w88"></td>
+                            <td id="c81"><canvas id="c81cover1"></canvas>Cover</td>
+                            <td id="c82"></td>
+                            <td id="c83"></td>
+                            <td id="c84"></td>
+                            <td id="c85"></td>
+                            <td id="c86"></td>
+                            <td id="c87"></td>
+                            <td id="c88"></td>
                         </tr>
+
                     </table>
                 </div>
             </div>
@@ -279,10 +286,80 @@
 <script>
 
 
+    $("canvas").each( function() {
+        var cId = $(this)[0].id;
+        var canvas = document.getElementById(cId);
+        var ctx = canvas.getContext('2d');
+
+        /*console.log("<EACH>");
+        console.log($("#" + cId).width());*/
+        // set the size of the canvas according to the size of the cell
+        canvas.width = $("#" + cId).width();
+        canvas.height = $("#" + cId).width();
+
+        // set initial angle to 0 and stash it for rotation
+        canvas.setAttribute("angleInDegrees",0);
+
+        // create the image element for this cell and draw it onload
+        image=document.createElement("img");
+        image.src = getImgFromId(cId);
+        image.id = 'i' + cId;
+        console.log(image);
+
+        image.onload=function() {
+            ctx.drawImage($(this)[0],canvas.width/2-image.width/2,canvas.height/2-image.width/2);
+            /*console.log("id:" + cId + " cW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height + " iH:" + image.height);
+            console.log(image);*/
+
+        }
+        /*console.log("</EACH>");*/
+    });
+
+    $("canvas").click(function(){
+        // determine the rotation value and execute rotation
+        var canvas = document.getElementById($(this)[0].id);
+        var currentDegrees = parseInt(canvas.getAttribute("angleInDegrees"));
+        var angleInDegrees = currentDegrees == 270 ? 0 : currentDegrees + 90;
+        canvas.setAttribute("angleInDegrees",angleInDegrees);
+        drawRotated($(this)[0].id,angleInDegrees);
+    });
+
+    function drawRotated(cId, degrees){
+        /*console.log("<ROTATE>");*/
+        var canvas = document.getElementById(cId);
+        var ctx = canvas.getContext('2d');
+        // create a new element for the rotated image
+        image=document.createElement("img");
+        image.src = getImgFromId(cId);
+
+        // clear the canvas
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        // save the current settings
+        ctx.save();
+        // reset the center point
+        ctx.translate(canvas.width/2,canvas.height/2);
+        // rotate
+        ctx.rotate(degrees*Math.PI/180);
+        // and draw it!
+        ctx.drawImage(image,-image.width/2,-image.width/2);
+        // restore the saved settings
+        ctx.restore();
+
+        /*console.log("degrees:" + degrees + " RcW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height );*/
+        /*console.log("</ROTATE>");*/
+    }
+
+    function getImgFromId (cId) {
+        // we'll need to strip the id number to get the base class for this terrain
+        var regEx = /c\d\d(.*)/;
+        var imgStr = "http://localhost:63343/TerrainWizard/img/" + regEx.exec(cId)[1] + ".png";
+        console.log(imgStr);
+        return imgStr;
+    }
 
     function setCellSize() {
-        var rowWidth = $("#w11").height() + 10;
-        console.log($("#w11"));
+        var rowWidth = $("#c11").height() + 10;
+        console.log($("#c11"));
         console.log( "rowWidth: " + rowWidth);
         $(".wCell").css("height",rowWidth);
         setBackground('grassCell');
@@ -298,8 +375,16 @@
     $(".terrainTile").click( function() {
         angle = (angle+90)%360;
         console.log("Id:" + $(this)[0].id + " Angle:" + angle);
-        $(this)[0].className = "rotate" + angle;
-        $(this)[0].addClass($(this)[0].id + angle);
+
+        // we'll need to strip the id number to get the base class for this terrain
+        var regEx = /(\D*)\d*/;
+        var idStr = regEx.exec($(this)[0].id);
+
+        // apply the rotation class
+        $(this)[0].className = idStr[1] + " rotate" + angle;
+
+        // apply the positional class
+        $(this)[0].className += " " + (idStr[1] + angle);
         console.log(this);
     });
 
@@ -315,18 +400,25 @@
     function setBackground(background) {
         for( i=1; i < 9; i++) {
             for( k=1; k < 9; k++) {
-                var wId = "#w" + i + k;
-                var oldClass = $(wId)[0].className;
+                var cId = "#c" + i + k;
+                var oldClass = $(cId)[0].className;
                 var newClass = background + randomIntFromInterval(1,4);
 
                 if (oldClass) {
-                    $(wId).removeClass(oldClass);
+                    $(cId).removeClass(oldClass);
                 }
-                $(wId).addClass(newClass);
-                $(wId).toggleClass("wCell");
+                $(cId).addClass(newClass);
+                $(cId).toggleClass("wCell");
             }
         }
     }
+
+    $("#deploymentButton").click( function() {
+       var leftClass = $("#deploymentLeft")[0].className;
+       var rightClass =  $("#deploymentRight")[0].className;
+        $("#deploymentLeft")[0].className = rightClass;
+        $("#deploymentRight")[0].className = leftClass;
+    });
 
  /*   $("#registrationForm").submit( function(event) {
         var errorMessage="";
