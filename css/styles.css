@@ -95,15 +95,63 @@ body {
     margin-top:80px;
 }
 
+
+#launcher {
+    margin: 2px 2px 0 0;
+    padding-left: 3px;
+    height: 196px;
+    width: 20%;
+    border: 1px solid rgb(90,44,19);
+    position: relative;
+    float: left;
+}
+
+#detailsForm {
+    margin: 2px 0 0 0;
+    height: 196px;
+    position: relative;
+    float: left;
+}
+
+#terrainOptions {
+    display: none;
+}
+
+#terrainTable td {
+    border: none;
+}
+
+#terrainTable label {
+    margin-top:7px;
+    float: right;
+}
+
+#mapOptions {
+    display: none;
+}
+
+.terrainCol {
+    width:150px;
+    position: relative;
+    float: left;
+}
+
 #wizardBox {
     margin: 10px auto;
     max-width: 900px;
 }
 
-#optionsBox {
+.optionsWrapper {
+    border: 1px solid #101010;
+}
+.optionsRow {
+    margin: 2px auto;
+    padding: 3px;
+}
+#optionsBox1 {
     border: 1px solid #101010;
     position: relative;
-
+    float: left;
     padding: 5px;
     height: 200px;
 }
@@ -142,14 +190,7 @@ body {
     float: left;
     z-index: 99;
     border-right: 1px dashed darkred;
-}
-
-.deploymentFirst {
-    width: 185px;
-}
-
-.deploymentSecond {
-    width: 130px;
+    display: none;
 }
 
 #deploymentRight {
@@ -161,12 +202,167 @@ body {
     z-index: 99;
     border-left: 1px dashed darkred;
     right: 17px;
+    display: none;
+}
+
+.deploymentFirst {
+    width: 185px;
+}
+
+.deploymentSecond {
+    width: 130px;
 }
 
 canvas {
     margin: 15px 0 0 0;
     width: 75px;
     height: 75px;
+}
+
+
+#terrainMenu {
+    width: 160px;
+}
+
+/**
+ * SPINNER CONTROLS *
+**/
+.spinner {
+    width: 73px;
+    height: 30px;
+}
+.spinner input {
+    text-align: right;
+}
+.input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+}
+.input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+}
+.input-group-btn-vertical > .btn:first-child {
+    border-top-right-radius: 4px;
+}
+.input-group-btn-vertical > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+}
+.input-group-btn-vertical i{
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+
+/**
+ * DZ CONTROLS *
+**/
+
+/* Start by hiding the checkboxes */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Checkbox Slider */
+.checkboxSlider {
+    width: 130px;
+    height: 20px;
+    background-image: url(../img/parchmentlightbtn.jpg);
+    margin: 3px;
+    border-radius: 50px;
+    position: relative;
+    float: left;
+    border: 1px solid black;
+}
+
+/* Create the pill to click */
+.checkboxSlider label {
+    display: block;
+    background-image: url(../img/jewelBgRed.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 12px;
+    border-radius: 50px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    z-index: 1;
+    left: 12px;
+    /*background: #ddd;*/
+}
+
+/* Create the text for the On position */
+.checkboxDZ:before {
+    content: 'Show DZ';
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    height: 2px;
+    color: #26ca28;
+    font-size: 11px;
+}
+
+/* Create the label for the off position */
+.checkboxDZ:after {
+    content: 'No DZ';
+    position: absolute;
+    top: 3px;
+    left: 85px;
+    height: 2px;
+    color: #FFF;
+    font-size: 11px;
+}
+
+/* hide the DZ Swap control until Show DZ is selected */
+#checkboxDZSwap {
+    display: none;
+}
+
+/* Create the text for the left player to go 1st */
+.checkboxDZSwap:before {
+    content: '1st Up';
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    height: 2px;
+    color: #26ca28;
+    font-size: 11px;
+}
+
+/* Create the label for the right player to go 1st */
+.checkboxDZSwap:after {
+    content: '1st Up';
+    position: absolute;
+    top: 3px;
+    left: 85px;
+    height: 2px;
+    color: #FFF;
+    font-size: 11px;
+}
+
+/* Create the checkbox event for the label */
+.checkboxSlider input[type=checkbox]:checked + label {
+    left: 70px;
+    background-image: url(../img/jewelBgGreen.png);
+    background-position: center;
+    background-size: cover;
 }
 
 /*Space*/

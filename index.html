@@ -89,7 +89,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" value="Register" class="btn btn-success" data-dismiss="modal"></input>
+                            <input type="submit" value="Register" class="btn btn-success" data-dismiss="modal"/>
                         </div>
                         <div id="registrationError"></div>
                     </div>
@@ -157,30 +157,198 @@
     <div id="wizard" class="container contentDiv">
         <div class="collapseButton" data-toggle="collapse" data-target="#wizardBox"><img src="img/wizardBtn.png" /></div>
         <div id="wizardBox" class="collapse">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="optionsBox">
-                        <form>
-                            <div class="form-group-sm">
-                                <div class="dropdown">
-                                    <button class="btn dropdown-toggle wButton" type="button" id="backgroundMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Background
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul id="backgroundSelector" class="dropdown-menu" aria-labelledby="backgroundMenu">
-                                        <li><a href="#wizard" id="street">City Streets</a></li>
-                                        <li><a href="#wizard" id="forest">Forest</a></li>
-                                        <li><a href="#wizard" id="grass">Grass</a></li>
-                                        <li><a href="#wizard" id="space">Space</a></li>
-                                        <li><a href="#wizard" id="swamp">Swamp</a></li>
-                                    </ul>
+            <div class="col-lg-12">
+                <div class="optionsWrapper">
+                    <div class="row optionsRow">
+                        <div id="launcher">
+                            <div>
+                                <div>
+                                    <h4>Tell the Wizard...</h4>
                                 </div>
                             </div>
-                            <div class="form-group-sm">
-                                <button class="btn wButton" type="button" id="deploymentButton">Swap Deployment Zones</button>
+                            <div>
+                                <div>
+                                    <button class="btn wButton" type="button" id="mapOptionsBtn">What you want</button>
+                                </div>
                             </div>
-                        </form>
+                            <div>
+                                <div>
+                                     <button class="btn wButton" type="button" id="terrainOptionsBtn">What you have</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="detailsForm">
+                            <form>
+                                <div id="terrainOptions" class="form-inline">
+                                    <!--<div class="form-group">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle wButton" type="button" id="terrainMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Terrain
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul id="terrainSelector" class="dropdown-menu" aria-labelledby="terrainMenu">
+                                                <li><a href="#wizard" id="coverTerrain">Cover</a></li>
+                                                <li><a href="#wizard" id="hillTerrain">Elevation</a></li>
+                                                <li><a href="#wizard" id="fenceTerrain">Fence (Concealment)</a></li>
+                                                <li><a href="#wizard" id="forestTerrain">Forest</a></li>
+                                                <li><a href="#wizard" id="obstructionTerrain">Obstruction</a></li>
+                                                <li><a href="#wizard" id="roughTerrain">Rough Terrain</a></li>
+                                                <li><a href="#wizard" id="structureTerrain">Structure</a></li>
+                                                <li><a href="#wizard" id="trenchTerrain">Trench</a></li>
+                                                <li><a href="#wizard" id="waterTerrain">Water</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+                                    <table id="terrainTable" class="table table-responsive">
+                                        <tr>
+                                            <td>
+                                                <label for="terrainCover">Cover</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainCover" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainCoverPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainCoverMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainElevation">Elevation</label>
+                                            </td>
+                                            <td class="form-group">
+
+                                                <div id="terrainElevation" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainElevationPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainElevationMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainFence">Fence</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainFence" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainFencePlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainFenceMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="terrainForest">Forest</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainForest" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainForestPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainForestMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainObstruction">Obstruction</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainObstruction" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainObstructionPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainObstructionMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainRough">Rough Terrain</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainRough" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainRoughPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainRoughMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="terrainStructure">Structure</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainStructure" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainStructurePlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainStructureMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainTrench">Trench</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainTrench" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainTrenchPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainTrenchMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <label for="terrainWater">Water</label>
+                                            </td>
+                                            <td class="form-group">
+                                                <div id="terrainWater" class="input-group spinner">
+                                                    <input type="text" class="form-control" value="0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button id="terrainWaterPlus" class="btn btn-default" type="button"><i class="glyphicon-plus"></i></button>
+                                                        <button id="terrainWaterMinus" class="btn btn-default" type="button"><i class="glyphicon-minus"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="mapOptions">
+                                    <div class="form-group-sm">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle wButton" type="button" id="backgroundMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Background
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul id="backgroundSelector" class="dropdown-menu" aria-labelledby="backgroundMenu">
+                                                <li><a href="#wizard" id="street">City Streets</a></li>
+                                                <li><a href="#wizard" id="forest">Forest</a></li>
+                                                <li><a href="#wizard" id="grass">Grass</a></li>
+                                                <li><a href="#wizard" id="space">Space</a></li>
+                                                <li><a href="#wizard" id="swamp">Swamp</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <div class="checkboxSlider checkboxDZ">
+                                            <input type="checkbox" value="1" id="checkboxDZInput" name="" />
+                                            <label for="checkboxDZInput"></label>
+                                        </div>
+                                        <div id="checkboxDZSwap" class="checkboxSlider checkboxDZSwap">
+                                            <input type="checkbox" value="1" id="checkboxDZSwapInput" name="" />
+                                            <label for="checkboxDZSwapInput"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+                </div>
 
                     <table id="wizardTable" class="table table-responsive">
                         <div id="deploymentLeft" class="deploymentFirst"></div>
@@ -265,7 +433,6 @@
                             <td id="c87"></td>
                             <td id="c88"></td>
                         </tr>
-
                     </table>
                 </div>
             </div>
@@ -352,7 +519,7 @@
     function getImgFromId (cId) {
         // we'll need to strip the id number to get the base class for this terrain
         var regEx = /c\d\d(.*)/;
-        var imgStr = "http://localhost:63343/TerrainWizard/img/" + regEx.exec(cId)[1] + ".png";
+        var imgStr = "img/" + regEx.exec(cId)[1] + ".png";
         console.log(imgStr);
         return imgStr;
     }
@@ -388,6 +555,16 @@
         console.log(this);
     });
 
+    $("#terrainOptionsBtn").click ( function() {
+        $("#mapOptions").hide();
+        $("#terrainOptions").show();
+    });
+
+    $("#mapOptionsBtn").click ( function() {
+        $("#terrainOptions").hide();
+        $("#mapOptions").show();
+    });
+
     $('#backgroundSelector li > a').click( function(e) {
         var background;
         console.log(this);
@@ -395,6 +572,9 @@
         console.log(background);
         setBackground(background);
     });
+
+    var terrainList = {};
+
 
 
     function setBackground(background) {
@@ -413,11 +593,56 @@
         }
     }
 
-    $("#deploymentButton").click( function() {
-       var leftClass = $("#deploymentLeft")[0].className;
-       var rightClass =  $("#deploymentRight")[0].className;
+    // Handle Terrain Count Spinners
+    $('.spinner .btn:first-of-type').click( function() {
+        var regEx = /(.*)Plus/;
+        var counterStr = "#" + regEx.exec($(this)[0].id)[1] + " input";
+        console.log(counterStr);
+        var currentVal = $(counterStr)[0].value == 'MAX' ? 10 : parseInt($(counterStr)[0].value);
+        console.log("up: " + currentVal);
+
+        if( currentVal < 10 ) {
+            $(counterStr)[0].value = ++currentVal;
+        } else {
+            $(counterStr)[0].value = 'MAX';
+        }
+
+    });
+
+    $('.spinner .btn:last-of-type').on('click', function() {
+        var regEx = /(.*)Minus/;
+        var counterStr = "#" + regEx.exec($(this)[0].id)[1] + " input";
+        var currentVal = $(counterStr)[0].value == 'MAX' ? 10 : parseInt($(counterStr)[0].value);
+        console.log("dn: " + currentVal);
+        if( currentVal > 0 ) {
+            $(counterStr)[0].value = --currentVal;
+        }
+    });
+
+
+
+
+    $("#checkboxDZSwapInput").click ( function() {
+        var leftClass = $("#deploymentLeft")[0].className;
+        var rightClass =  $("#deploymentRight")[0].className;
         $("#deploymentLeft")[0].className = rightClass;
         $("#deploymentRight")[0].className = leftClass;
+    });
+
+    $("#checkboxDZInput").click( function() {
+
+        if ($("#checkboxDZInput").is(':checked')) {
+            console.log($("#checkboxDZInput"));
+            $("#deploymentLeft").show();
+            $("#deploymentRight").show();
+            $("#checkboxDZSwap").show();
+        }
+        else {
+            $("#deploymentLeft").hide();
+            $("#deploymentRight").hide();
+            $("#checkboxDZSwap").hide();
+        }
+
     });
 
  /*   $("#registrationForm").submit( function(event) {
