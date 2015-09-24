@@ -30,7 +30,7 @@
 
 </head>
 
-<body> <!--onload="setCellSize()"-->
+<body onload="setCellSize()" >
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -120,10 +120,7 @@
 
     <!-- Features Div -->
     <div id="features" class="container contentDiv">
-        <div id="featuresBoxTitle" class="collapseButton" data-toggle="collapse" data-target="#featuresBox"><img src="img/featuresBtn.png" />
-            <br/>
-            <div id="featuresExpandArrow" class="expandArrowDown"></div>
-        </div>
+        <div class="collapseButton" data-toggle="collapse" data-target="#featuresBox"><img src="img/featuresBtn.png" /></div>
         <div id="featuresBox" class="collapse">
             <div class="row">
                 <div class="col-lg-12">
@@ -158,15 +155,12 @@
 
 
     <div id="wizard" class="container contentDiv">
-        <div id="wizardBoxTitle" class="collapseButton" data-toggle="collapse" data-target="#wizardBox"><img src="img/wizardBtn.png" />
-            <br/>
-            <div id="wizardExpandArrow" class="expandArrowDown"></div>
-        </div>
+        <div class="collapseButton" data-toggle="collapse" data-target="#wizardBox"><img src="img/wizardBtn.png" /></div>
         <div id="wizardBox" class="collapse">
             <div class="col-lg-12">
                 <div class="optionsWrapper">
                     <div class="row optionsRow">
-                        <form action="wizard.php" method="post" onsubmit="AJAXSubmit(this); return false;" id="wizardForm" class="form-inline">
+                        <form action="wizard.php" method="post" onsubmit="AJAXSubmit(this); return false;" class="form-inline">
                             <table id="terrainTable" class="table">
                                 <tr>
                                     <td>
@@ -285,7 +279,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6" style="text-align:center">
-                                        <button type="button" onclick="saveCollection()" class="btn btn-default">Save Collection</button>
+                                        <button type="submit" class="btn btn-default">Save Collection</button>
                                     </td>
                                 </tr>
                             </table>
@@ -312,14 +306,14 @@
                                         <td class="form-group optionsSlider">
                                             <div class="form-group-sm">
                                                 Include terrain in <br />Deployment Zone?
-                                                <div class="checkboxSlider checkboxDZTerrain checkboxControl">
-                                                    <input type="checkbox" value="1" name="terrainInDZ" id="checkboxDZTerrainInput" />
+                                                <div class="checkboxSlider checkboxDZTerrain">
+                                                    <input type="checkbox" value="1" name="checkboxDZTerrain" id="checkboxDZTerrainInput" name="" />
                                                     <label for="checkboxDZTerrainInput"></label>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="form-group">
-                                            <button class="btn wButton bigButton" type="submit" id="generateMap">Create a Map!</button>
+                                            <button class="btn wButton bigButton" type="button" id="generateMap">Create a Map!</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -331,58 +325,156 @@
         </div>
     </div>
     <div id="wizardContainer">
-        <!-- Dynamic table goes here! -->
+        <table id="wizardTable">
+            <div id="leftPlayer" class="deploymentSecond deploymentZone deploymentLeft"></div>
+            <div id="rightPlayer" class="deploymentFirst deploymentZone deploymentRight"></div>
+            <tr>
+                <th colspan="8">
+                    <div class="form-group-sm">
+                        <div class="checkboxSlider checkboxDZ">
+                            <input type="checkbox" value="1" id="checkboxDZInput" name="" />
+                            <label for="checkboxDZInput"></label>
+                        </div>
+                        <div id="checkboxDZSwap" class="checkboxSlider checkboxDZSwap">
+                            <input type="checkbox" value="1" id="checkboxDZSwapInput" name="" />
+                            <label for="checkboxDZSwapInput"></label>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <td id="c11" ></td>
+                <td id="c12"></td>
+                <td id="c13"></td>
+                <td id="c14"><canvas id="c14water1"></canvas>Water</td>
+                <td id="c15"></td>
+                <td id="c16"></td>
+                <td id="c17"><canvas id="c17cover1"></canvas>Cover</td>
+                <td id="c18"></td>
+            </tr>
+            <tr>
+                <td id="c21"></td>
+                <td id="c22"><canvas id="c22rough1"></canvas>Rough</td>
+                <td id="c23"></td>
+                <td id="c24"></td>
+                <td id="c25"><canvas id="c25hill1"></canvas>Hill</td>
+                <td id="c26"></td>
+                <td id="c27"></td>
+                <td id="c28"></td>
+            </tr>
+            <tr>
+                <td id="c31"><canvas id="c31forest1"></canvas>Forest</td>
+                <td id="c32"></td>
+                <td id="c33"></td>
+                <td id="c34"></td>
+                <td id="c35"></td>
+                <td id="c36"></td>
+                <td id="c37"></td>
+                <td id="c38"></td>
+            </tr>
+            <tr>
+                <td id="c41"></td>
+                <td id="c42"></td>
+                <td id="c43"></td>
+                <td id="c44"></td>
+                <td id="c45"></td>
+                <td id="c46"></td>
+                <td id="c47"></td>
+                <td id="c48"></td>
+            </tr>
+            <tr>
+                <td id="c51"></td>
+                <td id="c52"></td>
+                <td id="c53"></td>
+                <td id="c54"></td>
+                <td id="c55"></td>
+                <td id="c56"></td>
+                <td id="c57"></td>
+                <td id="c58"></td>
+            </tr>
+            <tr>
+                <td id="c61"><canvas id="c61trench1"></canvas>Trench</td>
+                <td id="c62"></td>
+                <td id="c63"></td>
+                <td id="c64"></td>
+                <td id="c65"></td>
+                <td id="c66"></td>
+                <td id="c67"></td>
+                <td id="c68"></td>
+            </tr>
+            <tr>
+                <td id="c71"></td>
+                <td id="c72"></td>
+                <td id="c73"></td>
+                <td id="c74"></td>
+                <td id="c75"><canvas id="c75structure1"></canvas>Structure</td>
+                <td id="c76"></td>
+                <td id="c77"></td>
+                <td id="c78"></td>
+            </tr>
+            <tr>
+                <td id="c81"><canvas id="c81cover1"></canvas>Cover</td>
+                <td id="c82"></td>
+                <td id="c83"></td>
+                <td id="c84"></td>
+                <td id="c85"></td>
+                <td id="c86"></td>
+                <td id="c87"></td>
+                <td id="c88"></td>
+            </tr>
+        </table>
     </div>
-  <!--  <div id="download" class="container contentDiv">
+    <div id="download" class="container contentDiv">
         <div class="collapseButton" data-toggle="collapse" data-target="#downloadBox"><img src="img/downloadBtn.png" />
             <div id="downloadBox" class="collapse">
                 <div class="row">
                     <div class="col-lg-12">
+                        <?php
+                            foreach ($_POST as $key => $value) {
+                                echo "$key: $value<br />";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 <script>
 
-    $(document).on('click','canvas', function()  {
-        console.log("onload canvas");
-        /*$("canvas").each( function() {*/
+
+    $("canvas").each( function() {
         var cId = $(this)[0].id;
         var canvas = document.getElementById(cId);
         var ctx = canvas.getContext('2d');
 
-        console.log("<EACH>");
-        console.log($("#" + cId).width());
+        /*console.log("<EACH>");
+        console.log($("#" + cId).width());*/
         // set the size of the canvas according to the size of the cell
         canvas.width = $("#" + cId).width();
         canvas.height = $("#" + cId).width();
 
         // set initial angle to 0 and stash it for rotation
-        canvas.setAttribute("angleInDegrees", 0);
+        canvas.setAttribute("angleInDegrees",0);
 
         // create the image element for this cell and draw it onload
-        image = getImgFromId(cId);
+        image=getImgFromId(cId);
         console.log(image);
         image.className = "img-responsive";
-        image.setAttribute("width", "100px");
+        image.setAttribute("width","100px");
         console.log(image);
 
-        image.onload = function () {
-            ctx.drawImage($(this)[0], canvas.width / 2 - canvas.width / 4, canvas.height / 2 - image.width / 4, canvas.height / 2, canvas.width / 2);
-            console.log("id:" + cId + " cW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height + " iH:" + image.height);
-            console.log(image);
+        image.onload=function() {
+            ctx.drawImage($(this)[0],canvas.width/2-canvas.width/4,canvas.height/2-image.width/4,canvas.height/2,canvas.width/2);
+            /*console.log("id:" + cId + " cW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height + " iH:" + image.height);
+            console.log(image);*/
 
         };
-        console.log("</EACH>");
+        /*console.log("</EACH>");*/
     });
 
-    $(document).on('click',"canvas", function() {
-    /*$("canvas").click(function(){*/
+    $("canvas").click(function(){
         // determine the rotation value and execute rotation
         var canvas = document.getElementById($(this)[0].id);
-        console.log("CANVAS:");
-        console.log(canvas);
         var currentDegrees = parseInt(canvas.getAttribute("angleInDegrees"));
         var angleInDegrees = currentDegrees == 270 ? 0 : currentDegrees + 90;
         canvas.setAttribute("angleInDegrees",angleInDegrees);
@@ -390,7 +482,7 @@
     });
 
     function drawRotated(cId, degrees){
-        console.log("<ROTATE>");
+        /*console.log("<ROTATE>");*/
         var canvas = document.getElementById(cId);
         var ctx = canvas.getContext('2d');
         // create a new element for the rotated image
@@ -410,8 +502,8 @@
         // restore the saved settings
         ctx.restore();
 
-        console.log("degrees:" + degrees + " RcW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height );
-        console.log("</ROTATE>");
+        /*console.log("degrees:" + degrees + " RcW:" + canvas.width + " iW:" + image.width + " cH:" + canvas.height );*/
+        /*console.log("</ROTATE>");*/
     }
 
     function getImgFromId (cId) {
@@ -488,30 +580,6 @@
         }
     }
 
-
-    $("#wizardBoxTitle").click( function() {
-        console.log("wizard title cicked");
-        var regEx = /(expandArrowDown)/;
-        var currentClass = regEx.exec($("#wizardExpandArrow")[0].className);
-        var newClass = currentClass ? "expandArrowUp" : "expandArrowDown";
-        var oldClass = newClass == "expandArrowUp" ? "expandArrowDown" : "expandArrowUp";
-        console.log("old: " + oldClass + " new: " + newClass);
-        $("#wizardExpandArrow").toggleClass(oldClass);
-        $("#wizardExpandArrow").toggleClass(newClass);
-    });
-
-    $("#featuresBoxTitle").click( function() {
-        console.log("box title cicked");
-        var regEx = /(expandArrowDown)/;
-        var currentClass = regEx.exec($("#featuresExpandArrow")[0].className);
-        var newClass = currentClass ? "expandArrowUp" : "expandArrowDown";
-        var oldClass = newClass == "expandArrowUp" ? "expandArrowDown" : "expandArrowUp";
-        console.log("old: " + oldClass + " new: " + newClass);
-
-        $("#featuresExpandArrow").toggleClass(oldClass);
-        $("#featuresExpandArrow").toggleClass(newClass);
-    });
-
     // Handle Terrain Count Spinners
     $('.spinner .btn:first-of-type').click( function() {
         var regEx = /(.*)Plus/;
@@ -538,10 +606,8 @@
         }
     });
 
-    // Handle ShowDZ and SwapDZ
-    /* Since this element is created dynamically by the AJAX call,
-      we need to set up the event handler on the document itself */
-    $(document).on('click',"#checkboxDZSwapInput", function() {
+
+    $("#checkboxDZSwapInput").click ( function() {
         var regEx = /(deploymentFirst|deploymentSecond)/;
         var leftClass = regEx.exec($(".deploymentLeft")[0].className);
         var rightClass = regEx.exec($(".deploymentRight")[0].className);
@@ -554,7 +620,17 @@
         $("#rightPlayer").toggleClass(leftClass[0]);
     });
 
-    $(document).on('click',"#checkboxDZInput", function() {
+    function configureDZ () {
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        var rWidth = (width - $("#wizardContainer").width()) / 2;
+        console.log("wW:" + width + "- cW: " + $("#wizardContainer").width() +  " = " + rWidth);
+        $(".deploymentRight").css("right",rWidth);
+        console.log($(".deploymentRight").css("right"));
+
+        $(".deploymentZone").css("height",$("#wizardTable").height() - 18);
+    }
+
+    $("#checkboxDZInput").click( function() {
 
         configureDZ();
 
@@ -569,48 +645,20 @@
             $(".deploymentRight").hide();
             $("#checkboxDZSwap").hide();
         }
+
     });
-
-    function configureDZ () {
-        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        var rWidth = (width - $("#wizardContainer").width()) / 2;
-        console.log("wW:" + width + "- cW: " + $("#wizardContainer").width() +  " = " + rWidth);
-        $(".deploymentRight").css("right",rWidth);
-        console.log($(".deploymentRight").css("right"));
-
-        $(".deploymentZone").css("height",$("#wizardTable").height() - 33);
-    }
 
     $("#generateMap").click( function() {
        $("#wizardContainer").show();
     });
 
-    function saveCollection() {
-        $("#terrainTable").find('input').each( function () {
-            var element = this.name;
-            var res = element.replace(/^t/,'terrain');
-            console.log($("#" + res + ' input')[0].value);
-
-            /*SCHNO: PUT SAVE COLLECTION CODE HERE!!!*/
-
-        });
-    }
 
     function ajaxSuccess() {
         console.log("Schno AJAX Success");
-        console.log(this.responseText);
-        console.log(this.responseXML);
-        $("#wizardContainer")[0].innerHTML = this.responseText;
-
-        setCellSize();
-
-        console.log($("#wizardContainer"));
-
+        console.log(this);
     }
 
     function AJAXSubmit(oFormElement) {
-        console.log("Schno in SUbmit");
-        console.log(oFormElement);
         if (!oFormElement.action) { return; }
         var oReq = new XMLHttpRequest();
         oReq.onload = ajaxSuccess;

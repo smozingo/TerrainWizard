@@ -47,6 +47,36 @@ body {
     margin: 6px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.collapseButton {
+    min-height: 100px;
+}
+
+.expandArrowUp {
+    background-image: url(../img/arrowUp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 4%;
+    position: relative;
+    z-index: 0;
+    height: 31px;
+    top: -8px;
+}
+
+.expandArrowDown {
+    background-image: url(../img/arrowDown.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 4%;
+    position: relative;
+    z-index: 0;
+    height: 31px;
+    top: -8px;
+}
+
 .contentDiv {
     background-color: #5e2f18;
     background-image: url(../img/parchmentlightbg.jpg);
@@ -57,6 +87,8 @@ body {
     margin: 10px auto 10px auto;
     padding: 0 20px 0 20px;
     width: 970px;
+    min-height: 100px;
+    position: relative;
 }
 
 .contentDiv p {
@@ -90,7 +122,11 @@ body {
     width: 170px;
     height: 55px;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.6em;
+}
+
+li a {
+    font-weight: bold !important;
 }
 
 .collapseButton {
@@ -131,6 +167,7 @@ body {
 
 .optionsWrapper {
     border: 1px solid #101010;
+    margin-bottom: 10px;
 }
 .optionsRow {
     margin: 2px auto;
@@ -138,7 +175,7 @@ body {
 }
 
 #optionsTable {
-    position:relative;
+    position: relative;
     left: 70px;
 }
 
@@ -149,6 +186,9 @@ body {
 
 .optionsSlider {
     font-size: 1.4em;
+    text-align: center;
+    position: relative;
+    left: -30px;
 }
 
 #wizardContainer {
@@ -169,7 +209,7 @@ body {
     position: relative;
     height: 75px;
     width: 75px;
-    top: -30px;
+    top: -5px;
 }
 
 #wizardTable td {
@@ -193,7 +233,7 @@ body {
 
 .deploymentZone {
     height: 1199px;
-    margin: 18px 0 0 1px;
+    margin: 33px 0 0 1px;
     /*background-color: rgba(100, 170, 95, 0.1);*/
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -286,8 +326,8 @@ input[type=checkbox] {
 
 /* Checkbox Slider */
 .checkboxSlider {
-    width: 130px;
-    height: 20px;
+    width: 165px;
+    height: 35px;
     background-image: url(../img/parchmentlightbtn.jpg);
     margin: -6px 3px 3px 3px;
     border-radius: 50px;
@@ -302,8 +342,9 @@ input[type=checkbox] {
     background-image: url(../img/jewelBgRed.png);
     background-position: center;
     background-size: cover;
-    width: 50px;
-    height: 12px;
+    width: 70px;
+    height: 23px;
+    top: 5px;
     border-radius: 50px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -312,7 +353,6 @@ input[type=checkbox] {
     transition: all .5s ease;
     cursor: pointer;
     position: absolute;
-    top: 4px;
     z-index: 1;
     left: 12px;
     /*background: #ddd;*/
@@ -322,22 +362,22 @@ input[type=checkbox] {
 .checkboxDZ:before {
     content: 'Show DZ';
     position: absolute;
-    top: 3px;
     left: 13px;
-    height: 2px;
     color: #26ca28;
-    font-size: 11px;
+    top: 8px;
+    height: 2px;
+    font-size: 15px;
 }
 
 /* Create the label for the off position */
 .checkboxDZ:after {
     content: 'No DZ';
     position: absolute;
-    top: 3px;
     left: 85px;
-    height: 2px;
     color: #FFF;
-    font-size: 11px;
+    top: 8px;
+    height: 2px;
+    font-size: 15px;
 }
 
 /* hide the DZ Swap control until Show DZ is selected */
@@ -349,56 +389,56 @@ input[type=checkbox] {
 .checkboxDZSwap:before {
     content: '1st Up';
     position: absolute;
-    top: 3px;
     left: 13px;
-    height: 2px;
     color: #26ca28;
-    font-size: 11px;
+    top: 8px;
+    height: 2px;
+    font-size: 15px;
 }
 
 /* Create the label for the right player to go 1st */
 .checkboxDZSwap:after {
     content: '1st Up';
     position: absolute;
-    top: 3px;
-    left: 85px;
+    left: 90px;
+    color: red;
+    top: 8px;
     height: 2px;
-    color: #FFF;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .checkboxDZTerrain {
     position: relative;
     top: 6px;
-    left: 23px;
+    left: 50px;
 }
 
 /* Create the text for terrain to be set in DZ */
 .checkboxDZTerrain:before {
     content: 'Yes';
     position: absolute;
-    top: 3px;
     left: 13px;
-    height: 2px;
     color: #26ca28;
-    font-size: 11px;
+    top: 4px;
+    height: 2px;
+    font-size: 20px;
 }
 
 /* Create the label for terrain NOT to be set in DZ */
 .checkboxDZTerrain:after {
     content: 'No';
     position: absolute;
-    top: 3px;
-    left: 85px;
-    height: 2px;
+    left: 100px;
     color: red;
-    font-size: 11px;
+    top: 4px;
+    height: 2px;
+    font-size: 20px;
 }
 
 
 /* Create the checkbox event for the label */
 .checkboxSlider input[type=checkbox]:checked + label {
-    left: 70px;
+    left: 80px;
     background-image: url(../img/jewelBgGreen.png);
     background-position: center;
     background-size: cover;
